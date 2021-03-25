@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Design version="12" xmlns="http://cypress.com/xsd/cydesignfile_v3">
-    <ToolInfo version="2.2.1.3221"/>
+    <ToolInfo version="2.3.0.3674"/>
     <Devices>
         <Device mpn="XMC4700-F144x2048">
             <BlockConfig>
@@ -454,17 +454,17 @@
                     <Port name="ioss[0].port[0].pin[15].digital_out[0]"/>
                 </Net>
                 <Net>
-                    <Port name="ccu4[2].ch[2].in0[0]"/>
-                    <Port name="ccu4[2].ch[2].in1[0]"/>
-                    <Port name="ioss[0].port[0].pin[15].digital_in[0]"/>
-                </Net>
-                <Net>
                     <Port name="ioss[0].port[1].pin[4].digital_in[0]"/>
                     <Port name="usic[0].ch[0].dx0[0]"/>
                 </Net>
                 <Net>
                     <Port name="ioss[0].port[1].pin[5].digital_out[0]"/>
                     <Port name="usic[0].ch[0].dout0[0]"/>
+                </Net>
+                <Net>
+                    <Port name="ccu4[2].ch[2].in0[0]"/>
+                    <Port name="ccu4[2].ch[2].in1[0]"/>
+                    <Port name="ioss[0].port[0].pin[15].digital_in[0]"/>
                 </Net>
             </Netlist>
         </Device>

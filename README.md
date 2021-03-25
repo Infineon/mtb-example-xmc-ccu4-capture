@@ -8,14 +8,12 @@ The code example uses two Capture and Compare Unit 4 (CCU4) slices of the XMC MC
 
    2. One slice configured in capture mode. It will capture the timer value on the rising and falling edges of the generated PWM.
 
-**Note:** This is Early Access Software for XMC devices in ModusToolbox. This software is made available for evaluation purposes only and is not recommended for production development.
-
 ## Requirements
 
-- [ModusToolbox® software](https://www.cypress.com/products/modustoolbox-software-environment) v2.2 with ModusToolbox Tools Patch 2.2.1
+- [ModusToolbox® software](https://www.cypress.com/products/modustoolbox-software-environment) v2.3
 - [SEGGER J-Link software](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack)
 - Programming Language: C
-- Associated Parts: All [XMC MCU](https://www.infineon.com/cms/en/product/microcontroller/32-bit-industrial-microcontroller-based-on-arm-cortex-m/) parts
+- Associated Parts: All [XMC™ MCU](https://www.infineon.com/cms/en/product/microcontroller/32-bit-industrial-microcontroller-based-on-arm-cortex-m/) parts
 
 ## Supported Toolchains (make variable 'TOOLCHAIN')
 
@@ -36,7 +34,9 @@ Install a terminal emulator if you don't have one. Instructions in this document
 
 ## Using the Code Example
 
-### In Eclipse IDE for ModusToolbox:
+Create the project and open it using one of the following:
+
+<details open><summary><b>In Eclipse IDE for ModusToolbox</b></summary>
 
 1. Click the **New Application** link in the **Quick Panel** (or, use **File** > **New** > **ModusToolbox Application**). This launches the [Project Creator](http://www.cypress.com/ModusToolboxProjectCreator) tool.
 
@@ -60,11 +60,13 @@ Install a terminal emulator if you don't have one. Instructions in this document
 
 For more details, see the [Eclipse IDE for ModusToolbox User Guide](https://www.cypress.com/MTBEclipseIDEUserGuide) (locally available at *{ModusToolbox install directory}/ide_{version}/docs/mt_ide_user_guide.pdf*).
 
-### In Command-line Interface (CLI):
+</details>
+
+<details open><summary><b>In Command-line Interface (CLI)</b></summary>
 
 ModusToolbox provides the Project Creator as both a GUI tool and a command line tool to easily create one or more ModusToolbox applications. See the "Project Creator Tools" section of the [ModusToolbox User Guide](https://www.cypress.com/ModusToolboxUserGuide) for more details.
 
-Alternatively, you can manually create the application using the following steps.
+Alternatively, you can manually create the application using the following steps:
 
 1. Download and unzip this repository onto your local machine, or clone the repository.
 
@@ -78,11 +80,13 @@ Alternatively, you can manually create the application using the following steps
 
 Various CLI tools include a `-h` option that prints help information to the terminal screen about that tool. For more details, see the [ModusToolbox User Guide](https://www.cypress.com/ModusToolboxUserGuide) (locally available at *{ModusToolbox install directory}/docs_{version}/mtb_user_guide.pdf*).
 
-### In Third-party IDEs:
+</details>
 
-**Note:** Only VScode is supported.
+<details open><summary><b>In Third-party IDEs</b></summary>
 
-1. Follow the instructions from the [CLI](#in-command-line-interface-cli) section to create the application, and import the libraries using the `make getlibs` command.
+**Note:** Only VS Code is supported.
+
+1. Follow the instructions from the **In Command-line Interface (CLI)** section to create the application, and import the libraries using the `make getlibs` command.
 
 2. Export the application to a supported IDE using the `make <ide>` command.
 
@@ -90,9 +94,11 @@ Various CLI tools include a `-h` option that prints help information to the term
 
 3. Follow the instructions displayed in the terminal to create or import the application as an IDE project.
 
+</details>
+
 ## Operation
 
-1. Connect the board to your PC using the provided USB cable through the debug USB connector.
+1. Connect the board to your PC using a micro-USB cable through the debug USB connector.
 
 2. Open a terminal program and select the J-Link CDC UART port. Set the serial port parameters to 8N1 and 115200 baud.
 
@@ -170,13 +176,14 @@ Document Title: *CE231959* - *XMC MCU: CCU4 Capture*
 | Version | Description of Change |
 | ------- | --------------------- |
 | 0.5.0   | New code example      |
+| 1.0.0   | Updated to support ModusToolbox software v2.3 |
 ------
 
 All other trademarks or registered trademarks referenced herein are the property of their respective owners.
 
 ![banner](images/ifx_logo_rgb.jpg)
 
-© 2020 Infineon Technologies AG
+© 2020-2021 Infineon Technologies AG
 
 All Rights Reserved.
 
