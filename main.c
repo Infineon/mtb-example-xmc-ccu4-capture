@@ -38,29 +38,26 @@
 *****************************************************************************/
 
 #include <stdio.h>
-
 #include "cybsp.h"
 #include "cy_utils.h"
-
 #include "retarget_io.h"
 
 /*******************************************************************************
 * Macros
 *******************************************************************************/
+
 /* Event mapping for CAPTURE_0 */
 #define CAPTURE_0_EVENT_RISING_EDGE  XMC_CCU4_SLICE_IRQ_ID_EVENT0
 #define CAPTURE_0_EVENT_FALLING_EDGE XMC_CCU4_SLICE_IRQ_ID_EVENT1
 
-/* Capture register mapping for CAPTURE_0 */
-
-/* Every time that a capture trigger 0 occurs, CCcapt0, the actual value of the timer is
-captured into the capture register 1 and the previous value stored in this register is
-transferred into capture register 0.*/
+/* Every time that a capture trigger 0 occurs, CCcapt0, the actual value of the 
+ * timer is captured into the capture register 1 and the previous value stored in 
+ * this register is transferred into capture register 0 */
 #define CAPTURE_0_VALUE_RISING_EDGE  1
 
-/*Every time that a capture trigger 1 occurs, CCcapt1, the actual value of the timer is
-captured into the capture register 3 and the previous value stored in this register is
-transferred into capture register 2.*/
+/* Every time that a capture trigger 1 occurs, CCcapt1, the actual value of the 
+ * timer is captured into the capture register 3 and the previous value stored in 
+ * this register is transferred into capture register 2 */
 #define CAPTURE_0_VALUE_FALLING_EDGE 3
 
 /*******************************************************************************
@@ -90,17 +87,19 @@ int main(void)
         CY_ASSERT(0);
     }
 
-    /* Initialize printf retarget */
+    /* Initialize retarget-io to use the debug UART port */
     retarget_io_init();
     
     /* Start CCU4 slices */
     XMC_CCU4_SLICE_StartTimer(CAPTURE_0_HW);
     XMC_CCU4_SLICE_StartTimer(PWM_0_HW);
-
-    printf("XMC CCU4 Capture example\n");
-    printf("========================\n");
-    printf("Starting counters...\n");
+  
+    /* Print starting sequence on screen */ 
+    printf("XMC CCU4 Capture example\r\n");
+    printf("========================\r\n");
+    printf("Starting counters...\r\n");
     
+    /* Variables define to get captured timer value on input signal rising and falling edge */
     uint16_t capture_rising;
     uint16_t capture_falling;
 
@@ -114,7 +113,9 @@ int main(void)
 
             /* Get captured timer value on input signal rising edge */
             capture_rising = XMC_CCU4_SLICE_GetCaptureRegisterValue(CAPTURE_0_HW, CAPTURE_0_VALUE_RISING_EDGE);
-            printf("Rising edge: %d\n", capture_rising);
+           
+            /* Print captured timer value of input signal rising edge */
+            printf("Rising edge: %d\r\n", capture_rising);
         }
 
         /* Check for a falling edge event in the input signal */
@@ -125,7 +126,9 @@ int main(void)
             
             /* Get captured timer value on input signal falling edge */
             capture_falling = XMC_CCU4_SLICE_GetCaptureRegisterValue(CAPTURE_0_HW, CAPTURE_0_VALUE_FALLING_EDGE);
-            printf("Falling edge: %d\n", capture_falling);
+            
+            /* Print captured timer value of input signal falling edge */
+            printf("Falling edge: %d\r\n", capture_falling);
         }
     }
 }
