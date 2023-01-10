@@ -27,7 +27,8 @@ The code example uses two CCU4 slices:
 
 - [XMC1400 boot kit](https://www.infineon.com/cms/en/product/evaluation-boards/kit_xmc14_boot_001/) (`KIT_XMC14_BOOT_001`) - Default value of `TARGET`
 - [XMC4700 relax kit](https://www.infineon.com/cms/en/product/evaluation-boards/kit_xmc47_relax_v1/) (`KIT_XMC47_RELAX_V1`)
-
+- [XMC4800 relax EtherCAT kit](https://www.infineon.com/cms/en/product/evaluation-boards/kit_xmc48_relax_ecat_v1/) (`KIT_XMC48_RELAX_ECAT_V1`
+)
 
 ## Hardware setup
 
@@ -153,7 +154,7 @@ The application uses two CCU4 slices configured using the CCU4 personality:
 
 Both CCU4 slices runs with the same prescaler setting, i.e., same tick size. Therefore the rising and falling edge captured values corresponds to the compare and period value configured for the PWM_0 resource.
 
-The CYBSP_DEBUG_UART and PWM_0 and CAPTURE_0 resources are not enabled in the default board configuration provided by the BSP. This example overrides the `BSP_DESIGN_MODUS` component provided with the BSP to enable and configure  CYBSP_DEBUG_UART. See the "Overriding the BSP configuration files" section of the [ModusToolbox&trade; software user guide](http://www.infineon.com/ModusToolboxUserGuide): *{ModusToolbox&trade; software install directory}/ide_{version}/docs/mtb_user_guide.pdf*
+The CYBSP_DEBUG_UART and PWM_0 and CAPTURE_0 resources are not enabled in the default board configuration provided by the BSP. This example overrides the `BSP_DESIGN_MODUS` component provided with the BSP to enable and configure  CYBSP_DEBUG_UART. See the "Overriding the BSP configuration files" section of the [ModusToolbox&trade; software user guide](https://www.infineon.com/ModusToolboxUserGuide): *{ModusToolbox&trade; software install directory}/ide_{version}/docs/mtb_user_guide.pdf*
 
 The main loop checks for the occurrence of the rising and falling edge events of the generated PWM signal, reads out the captured timer, and prints it out to the terminal.
 
@@ -184,7 +185,8 @@ Document title: *CE231959* - *XMC&trade; MCU: CCU4 capture*
 | 0.5.0   | New code example                              |
 | 1.0.0   | Updated to support ModusToolbox&trade; software v2.3 |
 | 1.1.0   | Added support for new kits                    |
-| 2.0.0   | Updated to support ModusToolbox&trade; software v3.0; CE will not be backwards compatible with previous versions of ModusToolbox&trade; software |
+| 2.0.0   | Updated to support ModusToolbox&trade; software v3.0; CE will not be backwards compatible with previous versions of ModusToolbox™ software |
+| 2.1.0   | Added support for new kits                    |
 ------
 
 All other trademarks or registered trademarks referenced herein are the property of their respective owners.

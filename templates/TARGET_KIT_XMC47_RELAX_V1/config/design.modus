@@ -10,8 +10,7 @@
                 </Block>
                 <Block location="ccu4[0].ch[0]">
                     <Alias value="PWM_0"/>
-                    <Personality template="xmc_ccu4" version="1.0">
-                        <Param id="init_start" value="false"/>
+                    <Personality template="xmc_ccu4" version="2.0">
                         <Param id="operation_mode" value="XMC_CCU4_SLICE_MODE_COMPARE"/>
                         <Param id="timer_initial_value" value="0"/>
                         <Param id="prescaler_mode" value="XMC_CCU4_SLICE_PRESCALER_MODE_NORMAL"/>
@@ -89,6 +88,7 @@
                         <Param id="external_event1_sr" value="0"/>
                         <Param id="enable_external_event2" value="false"/>
                         <Param id="external_event2_sr" value="0"/>
+                        <Param id="init_start" value="false"/>
                         <Param id="inFlash" value="true"/>
                     </Personality>
                 </Block>
@@ -99,8 +99,7 @@
                 </Block>
                 <Block location="ccu4[2].ch[2]">
                     <Alias value="CAPTURE_0"/>
-                    <Personality template="xmc_ccu4" version="1.0">
-                        <Param id="init_start" value="false"/>
+                    <Personality template="xmc_ccu4" version="2.0">
                         <Param id="operation_mode" value="XMC_CCU4_SLICE_MODE_CAPTURE"/>
                         <Param id="timer_initial_value" value="0"/>
                         <Param id="prescaler_mode" value="XMC_CCU4_SLICE_PRESCALER_MODE_NORMAL"/>
@@ -178,6 +177,7 @@
                         <Param id="external_event1_sr" value="0"/>
                         <Param id="enable_external_event2" value="false"/>
                         <Param id="external_event2_sr" value="0"/>
+                        <Param id="init_start" value="false"/>
                         <Param id="inFlash" value="true"/>
                     </Personality>
                 </Block>
@@ -357,16 +357,20 @@
                 <Block location="scu[0].clock[0].osc_fi[0]">
                     <Personality template="xmc4_ofi" version="1.0">
                         <Param id="calibration_mode" value="XMC_SCU_CLOCK_FOFI_CALIBRATION_MODE_FACTORY"/>
+                        <Param id="factoryAccuracy" value="15.0"/>
                     </Personality>
                 </Block>
                 <Block location="scu[0].clock[0].osc_hp[0]">
                     <Personality template="xmc4_oschp" version="1.0">
                         <Param id="mode" value="XMC_SCU_CLOCK_OSCHP_MODE_OSC"/>
                         <Param id="ext_frequency" value="12.000"/>
+                        <Param id="accuracyPpm" value="15"/>
                     </Personality>
                 </Block>
                 <Block location="scu[0].clock[0].osc_si[0]">
-                    <Personality template="xmc4_osi" version="1.0"/>
+                    <Personality template="xmc4_osi" version="1.0">
+                        <Param id="accuracy" value="5.0"/>
+                    </Personality>
                 </Block>
                 <Block location="scu[0].clock[0].periclk[0]">
                     <Personality template="xmc4_periclk" version="1.0">
@@ -446,6 +450,8 @@
                         <Param id="StandardReceiveBufferEventSRSel" value="0"/>
                         <Param id="ReceiveBufferErrorEvent" value="false"/>
                         <Param id="ReceiveBufferErrorEventSRSel" value="0"/>
+                        <Param id="ShowSystemRelatedOutputs" value="false"/>
+                        <Param id="StartAfterInit" value="true"/>
                         <Param id="inFlash" value="true"/>
                     </Personality>
                 </Block>
